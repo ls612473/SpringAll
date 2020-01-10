@@ -1,5 +1,6 @@
 
 ###基本原理：
+![Spring Security认证过程](https://niocoder.com/2018/01/02/Spring-Security%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90%E4%B8%80-Spring-Security%E8%AE%A4%E8%AF%81%E8%BF%87%E7%A8%8B/#%E6%A6%82%E8%BF%B0)
 ![基本原理](https://mrbird.cc/img/QQ%E6%88%AA%E5%9B%BE20180707111356.png)
 如上图所示，Spring Security包含了众多的过滤器，这些过滤器形成了一条链，所有请求都必须通过这些过滤器后才能成功访问到资源。
 其中UsernamePasswordAuthenticationFilter过滤器用于处理基于表单方式的登录认证，
