@@ -29,6 +29,7 @@ public class BrowserSecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http.formLogin() // 表单登录
                 // http.httpBasic() // HTTP Basic
+//                .loginPage("/login.html") // 登录跳转 URL
                 .loginPage("/authentication/require") // 登录跳转 URL
                 .loginProcessingUrl("/login") // 处理表单登录 URL
                 .successHandler(authenticationSucessHandler) // 处理登录成功
