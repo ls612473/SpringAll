@@ -58,7 +58,9 @@ public class BrowserSecurityConfig extends WebSecurityConfigurerAdapter {
                     .successHandler(authenticationSucessHandler) // 处理登录成功
                     .failureHandler(authenticationFailureHandler) // 处理登录失败
                     .and()
+                // rememberMe()用于开启记住我功能；tokenRepository(persistentTokenRepository())用于指定token持久化方法；
                 .rememberMe()
+                // tokenValiditySeconds配置了token的有效时长，单为为秒；
                     .tokenRepository(persistentTokenRepository()) // 配置 token 持久化仓库
                     .tokenValiditySeconds(3600) // remember 过期时间，单为秒
                     .userDetailsService(userDetailService) // 处理自动登录逻辑
