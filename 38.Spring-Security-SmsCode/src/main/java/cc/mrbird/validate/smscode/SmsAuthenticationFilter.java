@@ -49,8 +49,7 @@ public class SmsAuthenticationFilter extends AbstractAuthenticationProcessingFil
         return request.getParameter(mobileParameter);
     }
 
-    protected void setDetails(HttpServletRequest request,
-                              SmsAuthenticationToken authRequest) {
+    protected void setDetails(HttpServletRequest request,SmsAuthenticationToken authRequest) {
         authRequest.setDetails(authenticationDetailsSource.buildDetails(request));
     }
 

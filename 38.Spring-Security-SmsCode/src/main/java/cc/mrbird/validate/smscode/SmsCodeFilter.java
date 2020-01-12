@@ -43,7 +43,7 @@ public class SmsCodeFilter extends OncePerRequestFilter {
 
     private void validateCode(ServletWebRequest servletWebRequest) throws ServletRequestBindingException {
         String smsCodeInRequest = ServletRequestUtils.getStringParameter(servletWebRequest.getRequest(), "smsCode");
-        String mobileInRequest = ServletRequestUtils.getStringParameter(servletWebRequest.getRequest(), "smsCode");
+        String mobileInRequest = ServletRequestUtils.getStringParameter(servletWebRequest.getRequest(), "mobile");
 
         SmsCode codeInSession = (SmsCode) sessionStrategy.getAttribute(servletWebRequest, ValidateController.SESSION_KEY_SMS_CODE + mobileInRequest);
 

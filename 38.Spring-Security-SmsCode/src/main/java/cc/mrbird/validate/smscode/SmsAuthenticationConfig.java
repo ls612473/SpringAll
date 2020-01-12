@@ -32,7 +32,8 @@ public class SmsAuthenticationConfig extends SecurityConfigurerAdapter<DefaultSe
 
         SmsAuthenticationProvider smsAuthenticationProvider = new SmsAuthenticationProvider();
         smsAuthenticationProvider.setUserDetailService(userDetailService);
-
+        // 最后调用HttpSecurity的authenticationProvider方法指定了AuthenticationProvider为SmsAuthenticationProvider，
+        // 并将SmsAuthenticationFilter过滤器添加到了UsernamePasswordAuthenticationFilter后面。
         http.authenticationProvider(smsAuthenticationProvider)
                 .addFilterAfter(smsAuthenticationFilter, UsernamePasswordAuthenticationFilter.class);
 
